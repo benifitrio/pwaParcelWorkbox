@@ -131,33 +131,4 @@
 //   })
 // );
 
-//event push notification
-self.addEventListener('push', function(event) {
-    console.log('[Service Worker] Push Received.');
-    console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-
-    const title = 'Push Notification.';
-    const options = {
-      body: 'Okey, Notifikasi is succes.',
-      icon: 'images/soccer256.png',
-      vibrate: [100, 50, 100],
-      dateOfArrival: Date.now(),
-      primaryKey: 1,
-    };
-
-    // event.waitUntil(self.registration.showNotification(title, options));
-    const notificationPromise = self.registration.showNotification(title, options);
-    event.waitUntil(notificationPromise);
-  });
-
-//Klik notifikasi
-self.addEventListener('notificationclick', function(event) {
-    console.log('[Service Worker] Notification click Received.');
-
-    event.notification.close();
-
-    event.waitUntil(
-      clients.openWindow('https://dicoding.com/')
-    );
-  });
 
