@@ -1,0 +1,42 @@
+{
+  "name": "pwa-football",
+  "version": "1.0.0",
+  "description": "information about football app",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel src/*.html --port 1115",
+    "build": "parcel build src/*.html"
+  },
+  "author": "beni danuari fitrio",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "parcel-plugin-sw-asset-urls": "^0.1.2",
+    "parcel-plugin-sw-cache": "^0.3.1",
+    "web-push": "^3.4.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "idb": "^2.0.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "regenerator-runtime": "^0.13.5",
+    "sweetalert": "^2.1.2"
+  },
+  "cache": {
+    "swDest": "service-worker.js",
+    "runtimeCaching": [
+      {
+        "urlPattern": [
+          "https://api.football-data.org/v2/"
+        ],
+        "handler": "cacheFirst"
+      },
+      {
+        "urlPattern": "https://kit.fontawesome.com/54d44760a9.js",
+        "handler": "StaleWhileRevalidate"
+      }
+    ]
+  }
+}

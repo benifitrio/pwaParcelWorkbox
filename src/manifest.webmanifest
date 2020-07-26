@@ -1,0 +1,28 @@
+{
+    "name": "FootBall",
+    "short_name": "FootBall",
+    "description": "Aplikasi PWA football",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#00897B",
+    "theme_color": "#00897B",
+    "icons": [
+        {
+            "src": "images/soccer512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "images/soccer128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "images/soccer256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          }
+    ],
+    "nama": "Push Notifications FCM",
+    "gcm_sender_id": "634719526675"
+}
